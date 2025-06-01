@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>charity: water | Clean Water for All</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <img src="img/charity-water-logo.png" alt="charity: water logo" class="logo">
+    <nav>
+      <!-- Optional: Add navigation links if your design has them -->
+    </nav>
+  </header>
+  <main>
+    <section class="hero">
+      <h1>Clean Water Changes Everything</h1>
+      <p>Join us in bringing clean, safe water to communities in need.</p>
+      <a href="#donate" class="cta-btn">Donate Now</a>
+    </section>
+    <section class="story">
+      <h2>Our Story</h2>
+      <img src="img/students-carrying-water.jpg" alt="People with clean water" class="story-img">
+      <p>
+        771 million people lack access to clean water. charity: water is on a mission to change that. 
+        Every dollar brings us closer to a world where everyone has safe water to drink.
+      </p>
+    </section>
+    <section class="testimonials fade-in">
+      <h2>What Students Are Saying</h2>
+      <blockquote>
+        “Joining charity: water gave me purpose and community.”<br>
+        <span>- Alex, University of Michigan</span>
+      </blockquote>
+    </section>
+    <section class="cta" id="donate">
+      <h2>Ready to Make a Difference?</h2>
+      <a href="https://www.charitywater.org/donate" class="cta-btn">Give Clean Water</a>
+    </section>
+  </main>
+  <footer>
+    <p>&copy; 2025 charity: water. All rights reserved.</p>
+  </footer>
+  <script>
+    document.querySelectorAll('.fade-in').forEach(section => {
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) entry.target.classList.add('visible');
+        });
+      }, { threshold: 0.2 });
+      observer.observe(section);
+    });
+  </script>
+</body>
+</html>

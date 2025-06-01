@@ -1,0 +1,160 @@
+:root {
+  --brand-yellow: #ffe066; /* Use your Canva yellow */
+  --brand-black: #222;
+  --brand-blue: #005fa3;   /* Use your Canva blue */
+  --brand-gray: #f5f5f5;
+  --font-main: 'Montserrat', Arial, sans-serif; /* Use your Canva font */
+}
+
+body {
+  font-family: var(--font-main);
+  background: var(--brand-gray);
+  color: var(--brand-black);
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background: #fff;
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  height: 48px;
+}
+
+.hero {
+  background: var(--brand-yellow);
+  text-align: center;
+  padding: 4rem 1rem 3rem 1rem;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.25rem;
+  margin-bottom: 2rem;
+}
+
+.cta-btn {
+  background: var(--brand-blue);
+  color: #fff;
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 30px;
+  font-size: 1.1rem;
+  text-decoration: none;
+  transition: background 0.3s, transform 0.2s;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  animation: pulse 2s infinite;
+}
+
+.cta-btn:hover {
+  background: #0077a3;
+  transform: scale(1.05);
+}
+
+.story {
+  background: #fff;
+  padding: 3rem 1rem;
+  text-align: center;
+}
+
+.story-img {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 16px;
+  margin: 1.5rem 0;
+  transition: transform 0.4s cubic-bezier(.2,1,.22,1), box-shadow 0.4s;
+}
+
+.story-img:hover {
+  transform: scale(1.04);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+}
+
+.cta {
+  background: var(--brand-yellow);
+  text-align: center;
+  padding: 3rem 1rem;
+}
+
+footer {
+  background: #222;
+  color: #fff;
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.95rem;
+}
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s cubic-bezier(.2,1,.22,1);
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: none;
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 var(--brand-blue, #0099cc); }
+  70% { box-shadow: 0 0 0 10px rgba(0,153,204,0); }
+  100% { box-shadow: 0 0 0 0 rgba(0,153,204,0); }
+}
+
+/* New styles for impact and testimonials sections */
+.impact, .testimonials {
+  background: #fff;
+  padding: 2.5rem 1rem;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.stats {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 1.5rem;
+}
+
+.stats div {
+  background: var(--brand-yellow);
+  border-radius: 12px;
+  padding: 1rem 2rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+blockquote {
+  font-style: italic;
+  color: var(--brand-blue);
+  margin: 1.5rem auto;
+  max-width: 500px;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .hero h1 { font-size: 1.7rem; }
+  .story-img { max-width: 90vw; }
+  header { flex-direction: column; }
+}
+
+/* Place before </body> in index.html */
+<script>
+  document.querySelectorAll('.fade-in').forEach(section => {
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('visible');
+      });
+    }, { threshold: 0.2 });
+    observer.observe(section);
+  });
+</script>
