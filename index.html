@@ -43,14 +43,14 @@
     <p>&copy; 2025 charity: water. All rights reserved.</p>
   </footer>
   <script>
-    document.querySelectorAll('.fade-in').forEach(section => {
-      const observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) entry.target.classList.add('visible');
-        });
-      }, { threshold: 0.2 });
-      observer.observe(section);
-    });
+  document.querySelectorAll('.fade-in').forEach(section => {
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('visible');
+      });
+    }, { threshold: 0.2 });
+    observer.observe(section);
+  });
   </script>
 </body>
 </html>

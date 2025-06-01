@@ -105,9 +105,9 @@ footer {
 }
 
 @keyframes pulse {
-  0% { box-shadow: 0 0 0 0 var(--brand-blue, #0099cc); }
-  70% { box-shadow: 0 0 0 10px rgba(0,153,204,0); }
-  100% { box-shadow: 0 0 0 0 rgba(0,153,204,0); }
+  0% { box-shadow: 0 0 0 0 var(--brand-blue, #005fa3); }
+  70% { box-shadow: 0 0 0 10px rgba(0,95,163,0); }
+  100% { box-shadow: 0 0 0 0 rgba(0,95,163,0); }
 }
 
 /* New styles for impact and testimonials sections */
@@ -146,15 +146,3 @@ blockquote {
   .story-img { max-width: 90vw; }
   header { flex-direction: column; }
 }
-
-/* Place before </body> in index.html */
-<script>
-  document.querySelectorAll('.fade-in').forEach(section => {
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) entry.target.classList.add('visible');
-      });
-    }, { threshold: 0.2 });
-    observer.observe(section);
-  });
-</script>
